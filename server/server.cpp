@@ -51,8 +51,12 @@ int main(int argc,char * argv[])
 	    break;
 	}
     }
+    while(true)
+    {
     read(client_sock,buffer,sizeof(buffer)-1);
     printf("%s\n",buffer);
+    buffer[0] = '\0';
+    }
     close(srv_sock);
     close(client_sock);
     return 0;
